@@ -20,10 +20,9 @@
           :max-zoom="tileProvider.maxZoom"
           :min-zoom="3"
           layer-type="base"/>
-      <l-polyline :lat-lngs="linePaths"/>
+
       <polyline-decorator
-          :paths="linePaths"
-          :patterns="patterns"
+          :lat-lngs="linePaths"
       />
     </l-map>
   </div>
@@ -34,7 +33,6 @@ import { ref } from 'vue';
 import {
   LMap,
   LTileLayer,
-  LPolyline,
 } from '@vue-leaflet/vue-leaflet';
 import * as L from 'leaflet';
 import 'leaflet-polylinedecorator';
@@ -48,7 +46,6 @@ export default {
   components: {
     LMap,
     LTileLayer,
-    LPolyline,
     PolylineDecorator,
   },
   setup() {
